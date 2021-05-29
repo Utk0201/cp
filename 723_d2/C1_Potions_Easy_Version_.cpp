@@ -21,7 +21,7 @@ void solve(){
             if(i==j && i) dp[i][j]= (dp[i-1][j-1]>=0)?max(-1ll,dp[i-1][j-1]+ar[i-1]):-1;
             else if(i && j){
                 dp[i][j]=max(-1ll,dp[i-1][j]);
-                if(dp[i-1][j-1]>=0) dp[i][j]=max(dp[i][j],ar[i-1]+dp[i-1][j-1]);    //  I can drink this only my health >=0 till (i-1)
+                if(dp[i-1][j-1]>=0) dp[i][j]=max(dp[i][j],ar[i-1]+dp[i-1][j-1]);    //  I can drink this only if my health >=0 till (i-1)
             }
             else dp[i][j]=0;
         }
